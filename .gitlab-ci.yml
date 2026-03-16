@@ -1,0 +1,28 @@
+stages:
+  - test
+
+test:
+  stage: test
+  image: maven:3-eclipse-temurin-21
+
+  variables:
+    MAVEN_OPTS: "-Dmaven.repo.local=.m2/repository"
+
+  cache:
+    paths:
+      - .m2/repository
+
+  script:
+    - mvn --batch-mode clean verify
+
+  artifacts:
+    when: always
+    paths:
+      - target/site/jacoco/
+      - target/surefire-reports/
+    reports:
+      junit:
+        - target/surefire-reports/TEST-*.xml
+      coverage_report:
+        coverage_format: jacoco
+        path: target/site/jacoco/jacoco.xml
