@@ -6,11 +6,13 @@ A console application that performs integer division and presents the calculatio
 The project focuses on clean object-oriented design, separation of responsibilities, input validation, and automated testing.
 
 Key Features
+
 step-by-step long division calculation;
 quotient and remainder calculation;
 input validation;
 separated calculation, validation, and presentation logic;
 unit tests and code coverage checks.
+
 Tech Stack
 
 Java 21 · Maven · JUnit 5 · Mockito · AssertJ · JaCoCo
